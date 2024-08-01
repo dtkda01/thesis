@@ -1,0 +1,60 @@
+
+<html>
+<head>
+<title>Web Demo</title>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />        
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+
+</head>
+<body style="background-color:rgb(200, 225, 250); margin: auto;">
+<h1 style="text-align: center;" ><b>WEB DEMO NHẬN DẠNG THỨC ĂN NHẬT</b></h1>
+<div class="container">
+<div class="row">
+    <h2 style="text-align: center;">Chọn 1 file hình ảnh để upload</h2>
+    <h3 style="text-align: center;">
+        {% with messages = get_flashed_messages() %}
+          {% if messages %}
+            
+            {% for message in messages %}
+              <p>{{ message }}</p>
+            {% endfor %}
+            
+          {% endif %}
+        {% endwith %}
+    </h3>
+    <!-- <h3 style="text-align: center;">
+        {% with messages = get_flashed_messages() %}
+          {% if messages %}
+            <ul>
+            {% for message in messages %}
+              <li>{{ message }}</li>
+            {% endfor %}
+            </ul>
+          {% endif %}
+        {% endwith %}
+    </h3> -->
+
+    {% if materials %}
+        <h3 style="text-align: center;"><b>Thành phần: </b>{{ materials }}</h3>
+    {% endif %}
+
+    {% if filename %}
+        <div>
+            <img style="display: block ;margin-left: auto; margin-right: auto;" id="img-uplod" width="416" src="{{ url_for('display_image', filename=filename) }}">
+        </div>
+    {% endif %}
+    <form method="post" action="/" enctype="multipart/form-data">
+        <dl>
+            <p>
+                <input type="file" name="file" id="inp-image" class="form-control" autocomplete="off" required>
+            </p>
+        </dl>
+        <p style="text-align: center;">
+            <input type="submit" value="Submit" class="btn btn-info">
+        </p>
+    </form>
+</div>
+</div>
+</body>
+</html>

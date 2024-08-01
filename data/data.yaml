@@ -1,0 +1,7 @@
+train: /content/drive/MyDrive/DUONGTHIKEODA/train/images
+val: /content/drive/MyDrive/DUONGTHIKEODA/valid/images
+
+# Classes
+nc: 20  # number of classes
+names: ['chawanmushi', 'dango', 'dorayaki', 'hanabiramochi', 'hiyayakko', 'kakigori', 'karaage', 'kare-raisu', 'makizushi', 'nanakusa-gayu', 'natto', 'nikuman', 'okonomiyaki', 'omuraisu', 'ramen', 'sakura mochi', 'sashimi', 'taiyaki', 'tamagokake', 'unagi']  # class names
+
